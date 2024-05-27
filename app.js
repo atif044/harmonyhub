@@ -11,7 +11,13 @@ const fs=require('fs')
 // const sanitizeInput = require("./middleware/sanitizeInputs");
 // const ExpressMongoSanitize = require("express-mongo-sanitize");
 const app = express();
-
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
+app.options('*',cors());
 require("./database/db.js")();
 app.use(cookieParser());
 // app.use(ExpressMongoSanitize())
