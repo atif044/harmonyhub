@@ -13,8 +13,9 @@ const fs=require('fs')
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin:"https://harmonyhub-omega.vercel.app",
     credentials: true,
+    methods:["POST","GET"]
   })
 );
 app.options('*',cors());
