@@ -17,12 +17,12 @@ app.use(cookieParser());
 // app.use(ExpressMongoSanitize())
 app.use(
   cors({
-    origin: [],
+    origin: 'https://harmonyhub-three.vercel.app',
     credentials: true,
   },
 )
 );
-
+app.options('*', cors());
 app.use("/static",express.static(path.join(__dirname, './build/static'),{
   maxAge:86400000,
 setHeaders: (res, path) => {
@@ -58,4 +58,5 @@ app.use("/api/v1/university", universityRouter);
 app.use("/api/v1/organization", organizationRouter);
 app.use("/api/v1/admin",adminRouter);
 app.use(globalError);
+
 module.exports = app;
