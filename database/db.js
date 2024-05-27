@@ -6,7 +6,7 @@ const connectMongo = async () => {
     { useNewUrlParser: true, useUnifiedTopology: true }
   );
   if (connection) {
-    console.log("Connection successful");
+    console.log("Connection successful to mongo");
   } else console.log("err");
 };
 module.exports = connectMongo;
