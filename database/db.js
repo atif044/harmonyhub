@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const {databaseName,uri}=require('./db.config')
 const connectMongo = async () => {
+console.log(uri)
   const connection = await mongoose.connect(
     `${uri}/${databaseName}`,
     { useNewUrlParser: true, useUnifiedTopology: true }
