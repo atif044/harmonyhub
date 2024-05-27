@@ -15,14 +15,6 @@ const app = express();
 require("./database/db.js")();
 app.use(cookieParser());
 // app.use(ExpressMongoSanitize())
-app.use(
-  cors({
-    origin: 'https://harmonyhub-three.vercel.app',
-    credentials: true,
-  },
-)
-);
-app.options('*', cors());
 app.use("/static",express.static(path.join(__dirname, './build/static'),{
   maxAge:86400000,
 setHeaders: (res, path) => {
